@@ -162,6 +162,7 @@ namespace Game
                 }
             while (true)
             {
+                
                 Console.Clear();
                 Reprint(Elements);                                                                                                                                        
                 Console.WriteLine("\nBeweeg met pijlen of schiet met S.");
@@ -172,6 +173,9 @@ namespace Game
                         {
                             Console.WriteLine("You ve hited a {0}; you lost!.", Elements[Xplayer, Yplayer - 1].ToString().Split('.')[1]);
                             Console.ReadLine();
+                            Elements[Xplayer, Yplayer] = null;
+                            Xplayer = 0; Yplayer = 10;
+                            Elements[Xplayer, Yplayer] = new Player('X', new Point(Xplayer, Yplayer));
                             break;
                         }
                         Elements[Xplayer, Yplayer] = null;
@@ -186,6 +190,9 @@ namespace Game
                         {
                             Console.WriteLine("You ve hited a {0}, you lost!.", Elements[Xplayer, Yplayer + 1].ToString().Split('.')[1]);
                             Console.ReadLine();
+                            Elements[Xplayer, Yplayer] = null;
+                            Xplayer = 0; Yplayer = 10;
+                            Elements[Xplayer, Yplayer] = new Player('X', new Point(Xplayer, Yplayer));
                             break;
                         }
                         Elements[Xplayer, Yplayer] = null;
@@ -200,6 +207,9 @@ namespace Game
                         {
                             Console.WriteLine("You ve hited a {0}, you lost!.", Elements[Xplayer - 1, Yplayer].ToString().Split('+')[1]);
                             Console.ReadLine();
+                            Elements[Xplayer, Yplayer] = null;
+                            Xplayer = 0; Yplayer = 10;
+                            Elements[Xplayer, Yplayer] = new Player('X', new Point(Xplayer, Yplayer));
                             break;
                         }
                         Elements[Xplayer, Yplayer] = null;
@@ -214,12 +224,18 @@ namespace Game
                         {
                             Console.WriteLine("You win!!");
                             Console.ReadLine();
+                            Elements[Xplayer, Yplayer] = null;
+                            Xplayer = 0; Yplayer = 10;
+                            Elements[Xplayer, Yplayer] = new Player('X', new Point(Xplayer, Yplayer));
                             break;
                         }
                         if (Elements[Xplayer + 1, Yplayer] != null)
                         {
                             Console.WriteLine("You ve hited a {0}, you lost!.", Elements[Xplayer + 1, Yplayer].ToString().Split('+')[1]);
                             Console.ReadLine();
+                            Elements[Xplayer, Yplayer] = null;
+                            Xplayer = 0; Yplayer = 10;
+                            Elements[Xplayer, Yplayer] = new Player('X', new Point(Xplayer, Yplayer));
                             break;
                         }
                         Elements[Xplayer, Yplayer] = null;
